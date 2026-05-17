@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 02 do livro</title>
+    <style>
+        div{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Valor total da conta <input type="number" name="conta" id="conta"></p>
+    <p>Pessoas na mesa <input type="number" name="pessoas" id="pessoas"></p>
+    <input type="button" value="Calcule" onclick="calcular()">
+    <div id="res"></div>
+    <script>
+        function calcular(){
+        const valorConta  = document.querySelector('input#conta').value
+        const totalPessoas = document.querySelector('input#pessoas').value
+        const resultado = Number(valorConta / totalPessoas)
+        res.innerHTML = (`Cada pessoa irá pagar ${resultado.toLocaleString('pt-br',{style:'currency',currency:'BRL'})}`)
+
+        }
+    </script>
+</body>
+</html>
