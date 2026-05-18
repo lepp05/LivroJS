@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 04 do livro</title>
+</head>
+<body>
+    <input type="number" name="nota1" id="nota1">
+    <input type="number" name="nota2" id="nota2">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="res"></div>
+
+    <script>
+        function calcular() {
+            const nota_1 = Number(document.querySelector('input#nota1').value)
+            const nota_2 = Number(document.querySelector('input#nota2').value)
+            const media = (nota_1 + nota_2) / 2
+            const res = document.getElementById('res')
+            res.innerHTML = (`vc está com média : ${media} `)
+        }
+    </script>
+</body>
+</html>
