@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex 03 livro</title>
+</head>
+<body>
+    <p>Digite o preço do produto <input type="number" name="preço" id="preço"></p>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="na_hora"></div>
+    <div id="parcelado"></div>
+    
+    <script>
+        function calcular() {
+            const valor = document.querySelector('input#preço').value
+            const avista = valor - (valor * 0.10)
+            const x3 = valor / 3 
+            na_hora.innerHTML = (`Vc pode pagar à vista com 10% de desconto <button><strong>${avista.toLocaleString('pt-br',{style : 'currency', currency :'BRL'})}</strong></button> `) 
+            parcelado.innerHTML = (`Ou pode pagar parcelado em 3x de <button><strong>${x3.toLocaleString('pt-br',{style : 'currency', currency :'BRL'})}</strong></button>`)
+        }
+    </script>
+</body>
+</html>
