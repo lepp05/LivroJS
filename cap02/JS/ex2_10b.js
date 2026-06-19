@@ -1,0 +1,12 @@
+const frm = document.querySelector('form')
+const resp = document.querySelector('h3')
+
+frm.addEventListener('submit', (e) =>{
+    const valor = Number(frm.inPreco.value)
+    const tempo = Number(frm.inTempo.value)
+
+    const pagar = Math.ceil(tempo / 15) * valor
+    resp.innerHTML =`Total a pagar R$: ${pagar.toFixed(2)}`
+
+    e.preventDefault()
+})
