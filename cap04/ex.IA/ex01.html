@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Faixa de Desconto por valor de Serviço</h1>
+    <form action="">
+        <p>Valor do Serviço : <input type="number" name="" id="inValor" required min="0"></p>
+        <input type="submit" value="Ver Desconto">
+    </form>
+    <h2></h2>
+</body>
+
+<script>
+    const frm = document.querySelector('form')
+    const resp = document.querySelector('h2')
+
+    frm.addEventListener('submit', (e) =>{
+        e.preventDefault()
+
+        const valor = Number(frm.inValor.value)
+        const desc10 = (10/100) * valor
+        const desc15 = (15/100) * valor
+
+        if(valor < 200){
+            resp.innerHTML = 'Não tem desconto'
+        }else if(valor >= 200 && valor <= 500){
+            const result10 = valor - desc10
+            resp.innerHTML = `Vc ganhou 10% de desconto, total a pagar R$ : ${result10.toFixed(2)}`
+        }else{
+            const result15 = valor - desc15
+            resp.innerHTML = `Vc ganhou 15% de desconto, total a pagar R$ : ${result15.toFixed(2)}`
+        }
+    })
+</script>
+</html>
