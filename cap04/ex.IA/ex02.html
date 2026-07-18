@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Classificação de cilindrada</h1>
+    <form action="">
+        <p>Qual cilindrada ? <input type="number" name="" id="inCC" required min="0"></p>
+        <input type="submit" value="Ver Classificção">
+    </form>
+    <h2></h2>
+</body>
+<script>
+    const frm = document.querySelector('form')
+    const resp = document.querySelector('h2')
+
+
+
+    frm.addEventListener('submit', (e) =>{
+        e.preventDefault()
+        const cc = Number(frm.inCC.value)
+
+
+        // validacao extra
+        if(isNaN(cc) || cc <= 0){  
+            resp.innerHTML = 'digite uma cilindrada válida'
+            return
+        }
+
+        if(cc <= 160){
+            resp.innerHTML = 'Popular'
+        }else if(cc > 160 && cc <= 400){
+            resp.innerHTML = 'Média'
+        }else if(cc > 400 || cc ){
+            resp.innerHTML = 'Grande Porte'
+        }
+    })
+</script>
+</html>
