@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Orcamentos</h1>
+    <form action="">
+        <p>Orcamento 1 : <input type="number" name="" id="inorc1" required min="0"></p>
+        <p>Orcamento 2 : <input type="number" name="" id="inorc2" required min="0"></p>
+        <p>Orcamento 3 : <input type="number" name="" id="inorc3" required min="0"></p>
+        <input type="submit" value="Verificar">
+    </form>
+    <h2></h2>
+</body>
+    <script>
+        const frm = document.querySelector('form')
+        const resp = document.querySelector('h2')
+
+        frm.addEventListener('submit', (e) =>{
+            e.preventDefault()
+
+            const orc1 = Number(frm.inorc1.value)
+            const orc2 = Number(frm.inorc2.value)
+            const orc3 = Number(frm.inorc3.value)
+
+            if(isNaN(orc1) || isNaN(orc2) || isNaN(orc3) || orc1 < 1 || orc2 < 1 || orc3 < 1){
+                resp.innerHTML = 'Digite valores válidos'
+                return
+            }
+
+            if(orc1 == orc2 && orc2 == orc3){
+                resp.innerHTML = 'Os orçamentos são iguais'
+            }else{
+                resp.innerHTML = 'Os orçamentos não são iguais'
+            }
+        })
+    </script>
+</html>
